@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero({ onStart }) {
   return (
-    <section className="relative min-h-[80vh] w-full overflow-hidden bg-[#0b0b12]">
+    <section className="relative min-h-[80vh] w-full overflow-hidden bg-[#08110c]">
       {/* Spline scene */}
       <div className="absolute inset-0">
         <Spline
@@ -12,8 +12,8 @@ export default function Hero({ onStart }) {
           style={{ width: '100%', height: '100%' }}
         />
         {/* Soft vignette and gradient overlays that don't block interaction */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0b0b12]/30 via-transparent to-[#0b0b12]" />
-        <div className="pointer-events-none absolute inset-0 [background:radial-gradient(60%_40%_at_50%_20%,rgba(162,98,255,0.25),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#08110c]/40 via-transparent to-[#08110c]" />
+        <div className="pointer-events-none absolute inset-0 [background:radial-gradient(60%_40%_at_50%_20%,rgba(34,197,94,0.25),transparent_60%)]" />
       </div>
 
       {/* Content */}
@@ -22,10 +22,10 @@ export default function Hero({ onStart }) {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-5 inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-white/5 px-4 py-1.5 text-xs font-medium text-purple-200/90 shadow-[0_0_0_1px_rgba(168,85,247,0.15)] backdrop-blur"
+          className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-white/5 px-4 py-1.5 text-xs font-medium text-emerald-200/90 shadow-[0_0_0_1px_rgba(16,185,129,0.15)] backdrop-blur"
         >
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-purple-400 animate-pulse" />
-          AI Plant Diagnosis • Edge-powered
+          <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+          Eco AI • Plant Diagnostics
         </motion.span>
 
         <motion.h1
@@ -34,7 +34,7 @@ export default function Hero({ onStart }) {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-display max-w-4xl bg-gradient-to-b from-white to-white/80 bg-clip-text text-4xl font-semibold leading-tight text-transparent sm:text-5xl md:text-6xl"
         >
-          Lightning-fast plant care insights from a single photo
+          Nurture greener plants with climate-smart insights
         </motion.h1>
 
         <motion.p
@@ -43,7 +43,7 @@ export default function Hero({ onStart }) {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-4 max-w-2xl text-base text-white/70 sm:text-lg"
         >
-          Upload, analyze, and get tailored treatment recommendations — all in seconds.
+          Upload a leaf photo to detect diseases, stress, and care needs — optimized for sustainable, low-impact treatments.
         </motion.p>
 
         <motion.div
@@ -54,10 +54,10 @@ export default function Hero({ onStart }) {
         >
           <button
             onClick={onStart}
-            className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-purple-600/30 transition focus:outline-none focus:ring-2 focus:ring-purple-400/50"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-lime-600 px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-emerald-600/30 transition focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
           >
             <span className="absolute inset-0 translate-y-10 bg-gradient-to-r from-white/0 via-white/30 to-white/0 opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100" />
-            Start Analysis
+            Start Eco Analysis
           </button>
           <a
             href="#how-it-works"
@@ -67,10 +67,10 @@ export default function Hero({ onStart }) {
           </a>
         </motion.div>
 
-        {/* Floating sparkles */}
+        {/* Ambient glow */}
         <div className="pointer-events-none absolute left-1/2 top-24 -z-0 -translate-x-1/2">
           <motion.div
-            className="h-44 w-44 rounded-full bg-purple-500/20 blur-3xl"
+            className="h-44 w-44 rounded-full bg-emerald-500/20 blur-3xl"
             animate={{ scale: [1, 1.15, 1], opacity: [0.35, 0.5, 0.35] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
           />

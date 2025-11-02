@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { Upload, Image as ImageIcon, RefreshCw, Sparkles } from 'lucide-react';
+import { Image as ImageIcon, RefreshCw, Sparkles, Upload } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function UploadArea({ onFileSelected, onAnalyze, isAnalyzing, canAnalyze, onReset, previewUrl }) {
@@ -18,7 +18,7 @@ export default function UploadArea({ onFileSelected, onAnalyze, isAnalyzing, can
   const handleBrowse = () => inputRef.current?.click();
 
   return (
-    <section className="relative w-full bg-[#0b0b12]" id="upload">
+    <section className="relative w-full bg-[#08110c]" id="upload">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,7 +30,7 @@ export default function UploadArea({ onFileSelected, onAnalyze, isAnalyzing, can
           onDrop={handleDrop}
           className={[
             'group relative flex min-h-[260px] cursor-pointer flex-col items-center justify-center rounded-3xl border-2 border-dashed p-10 text-center transition',
-            isDragging ? 'border-purple-400/60 bg-white/5' : 'border-white/10 bg-white/[0.03] hover:border-white/15 hover:bg-white/[0.05]'
+            isDragging ? 'border-emerald-400/60 bg-white/5' : 'border-white/10 bg-white/[0.03] hover:border-white/15 hover:bg-white/[0.05]'
           ].join(' ')}
           onClick={handleBrowse}
         >
@@ -54,14 +54,14 @@ export default function UploadArea({ onFileSelected, onAnalyze, isAnalyzing, can
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.25),transparent_40%),radial-gradient(circle_at_70%_80%,rgba(236,72,153,0.2),transparent_40%)]"
+                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.25),transparent_40%),radial-gradient(circle_at_70%_80%,rgba(132,204,22,0.2),transparent_40%)]"
                   />
                 </div>
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <button
                     onClick={(e) => { e.stopPropagation(); onAnalyze(); }}
                     disabled={!canAnalyze || isAnalyzing}
-                    className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-lime-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-600/30 transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     <Sparkles className="h-4 w-4" /> {isAnalyzing ? 'Analyzing…' : 'Analyze Photo'}
                   </button>
@@ -81,7 +81,7 @@ export default function UploadArea({ onFileSelected, onAnalyze, isAnalyzing, can
                 exit={{ opacity: 0, y: -10 }}
                 className="flex max-w-xl flex-col items-center"
               >
-                <div className="mb-5 grid h-16 w-16 place-items-center rounded-2xl bg-white/10 text-purple-300 ring-1 ring-inset ring-white/10">
+                <div className="mb-5 grid h-16 w-16 place-items-center rounded-2xl bg-white/10 text-emerald-300 ring-1 ring-inset ring-white/10">
                   <ImageIcon className="h-7 w-7" />
                 </div>
                 <h3 className="text-lg font-semibold text-white">Drag & drop your plant photo here</h3>
@@ -108,7 +108,7 @@ export default function UploadArea({ onFileSelected, onAnalyze, isAnalyzing, can
           <motion.div
             aria-hidden
             animate={{ opacity: isDragging ? 0.6 : 0.25 }}
-            className="pointer-events-none absolute inset-0 -z-0 rounded-3xl bg-gradient-to-tr from-purple-500/30 via-fuchsia-500/20 to-cyan-400/20 blur-2xl"
+            className="pointer-events-none absolute inset-0 -z-0 rounded-3xl bg-gradient-to-tr from-emerald-500/30 via-lime-500/20 to-teal-400/20 blur-2xl"
           />
         </motion.div>
 
@@ -116,7 +116,7 @@ export default function UploadArea({ onFileSelected, onAnalyze, isAnalyzing, can
           <div className="mx-auto mt-4 flex max-w-2xl items-center gap-3 text-sm text-white/80">
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
               <motion.div
-                className="h-1.5 w-1/3 rounded-full bg-gradient-to-r from-purple-500 to-fuchsia-500"
+                className="h-1.5 w-1/3 rounded-full bg-gradient-to-r from-emerald-500 to-lime-500"
                 animate={{ x: ['0%', '200%'] }}
                 transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
               />

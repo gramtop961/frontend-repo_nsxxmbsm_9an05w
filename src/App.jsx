@@ -36,29 +36,29 @@ export default function App() {
     if (!file) return;
     setIsAnalyzing(true);
 
-    // Simulated analysis preview. Replace with a call to your Edge Function backend.
+    // Simulated analysis preview. Replace with your Edge Function backend call.
     await new Promise((r) => setTimeout(r, 1300));
     setResult({
       condition: 'Early leaf spot (preview)',
       confidence: 0.9,
-      symptoms: 'Brownish circular spots with yellow halos on older leaves.',
-      treatment: 'Remove affected leaves, improve air circulation, and apply a copper-based fungicide. Avoid overhead watering.'
+      symptoms: 'Small brown spots with pale halos; older leaves most affected.',
+      treatment: 'Prune affected leaves, increase airflow, water at soil level, and prefer organic copper or bio-fungicides.'
     });
 
     setIsAnalyzing(false);
   };
 
   const handleSubmitFeedback = (text) => {
-    // Hook up to backend to store feedback. For now, we just log it.
+    // Connect to backend storage later
     console.log('Feedback:', text);
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0b12] text-white">
+    <div className="min-h-screen bg-[#08110c] text-white">
       <Hero onStart={handleStart} />
       <main>
         <section id="how-it-works" className="relative mx-auto max-w-6xl px-6 py-16">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_40%_at_70%_0%,rgba(236,72,153,0.14),transparent_60%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_40%_at_70%_0%,rgba(16,185,129,0.14),transparent_60%)]" />
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,16 +69,20 @@ export default function App() {
             How it works
           </motion.h2>
           <div className="relative z-10 grid gap-6 sm:grid-cols-3">
-            {[{
-              title: 'Upload',
-              desc: 'Drop a photo of your plant leaves or stem.'
-            }, {
-              title: 'Analyze',
-              desc: 'AI edge function inspects for diseases and stress.'
-            }, {
-              title: 'Treat',
-              desc: 'Get tailored, step-by-step care recommendations.'
-            }].map((item, i) => (
+            {[
+              {
+                title: 'Capture',
+                desc: 'Drop a clear photo of your plant leaf or stem.'
+              },
+              {
+                title: 'Eco-Analyze',
+                desc: 'AI detects diseases and stress with low-energy edge compute.'
+              },
+              {
+                title: 'Sustain',
+                desc: 'Get organic, water-wise treatment suggestions tailored to you.'
+              }
+            ].map((item, i) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 16 }}

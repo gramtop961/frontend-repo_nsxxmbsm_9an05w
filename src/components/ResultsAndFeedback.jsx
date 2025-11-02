@@ -16,7 +16,7 @@ export default function ResultsAndFeedback({ result, onSubmitFeedback }) {
   };
 
   return (
-    <section className="w-full bg-[#0b0b12]" id="results">
+    <section className="w-full bg-[#08110c]" id="results">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-8 md:grid-cols-2">
           <motion.div
@@ -52,8 +52,8 @@ export default function ResultsAndFeedback({ result, onSubmitFeedback }) {
                     <span className="font-semibold text-white">Recommended Treatment: </span>
                     {result.treatment}
                   </div>
-                  <div className="rounded-xl bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 p-3 text-xs text-white/70 ring-1 ring-white/10">
-                    This is a sample preview. Connect your Edge Function to get live AI results.
+                  <div className="rounded-xl bg-gradient-to-r from-emerald-500/10 to-lime-500/10 p-3 text-xs text-white/70 ring-1 ring-white/10">
+                    Preview result — connect your Edge Function for live AI and region-aware guidance.
                   </div>
                 </motion.div>
               ) : (
@@ -78,20 +78,20 @@ export default function ResultsAndFeedback({ result, onSubmitFeedback }) {
             className="rounded-3xl bg-white/[0.04] p-6 shadow-2xl ring-1 ring-white/10 backdrop-blur"
           >
             <h3 className="text-lg font-semibold text-white">Share your feedback</h3>
-            <p className="mt-1 text-sm text-white/70">Help us improve diagnoses and recommendations.</p>
+            <p className="mt-1 text-sm text-white/70">Help us grow more resilient, low-impact plant care.</p>
             <form onSubmit={handleSubmit} className="mt-4 space-y-3">
               <textarea
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
                 rows={5}
-                className="w-full rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-purple-400/50 focus:bg-white/10"
-                placeholder="Share what worked, what didn’t, or any notes about your plant."
+                className="w-full rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-emerald-400/50 focus:bg-white/10"
+                placeholder="Share what worked, what didn’t, or any eco-friendly tip."
               />
               <div className="flex items-center justify-between">
                 <span className="text-xs text-white/50">We value constructive, respectful feedback.</span>
                 <button
                   type="submit"
-                  className="rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-purple-600/30 transition hover:brightness-110"
+                  className="rounded-xl bg-gradient-to-r from-emerald-600 to-lime-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-600/30 transition hover:brightness-110"
                 >
                   Submit
                 </button>
